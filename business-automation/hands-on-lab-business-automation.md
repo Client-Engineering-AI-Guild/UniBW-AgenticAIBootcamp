@@ -1,19 +1,21 @@
 # 👨🏻‍💻 Use case: Business Automation   
 
 ## Table of Contents
-- [Architecture](#-architecture)
-- [Use Case Description](#use-case-description)
-- [Pre-requisites](#pre-requisites)
-- [Create a watsonx.ai Agent](#create-a-watsonxai-agent)
-  - [Comparison Agent](#comparison-agent)
-    - [Setup](#setup)
-    - [Configuration](#configuration)
-    - [Tools](#tools)
-    - [Saving and Deploying](#saving-and-deploying)
-- [Integrating watsonx.ai agent as an External Agent in watsonx Orchestrate](#integrating-watsonxai-agent-as-an-external-agent-in-watsonx-orchestrate)
-- [Create an Orchestrate Agent](#create-an-orchestrate-agent)
-  - [Product Agent](#product-agent)
-- [Experience Agents in Action](#experience-agents-in-action)
+- [👨🏻‍💻 Use case: Business Automation](#-use-case-business-automation)
+  - [Table of Contents](#table-of-contents)
+  - [🏛 Architecture](#-architecture)
+  - [Use Case Description](#use-case-description)
+  - [Pre-requisites](#pre-requisites)
+  - [Create a watsonx.ai Agent](#create-a-watsonxai-agent)
+    - [Comparison Agent](#comparison-agent)
+      - [Setup](#setup)
+      - [Configuration](#configuration)
+      - [Tools](#tools)
+      - [Saving and Deploying](#saving-and-deploying)
+  - [Integrating watsonx.ai agent as an External Agent in watsonx Orchestrate](#integrating-watsonxai-agent-as-an-external-agent-in-watsonx-orchestrate)
+  - [Create an Orchestrate Agent](#create-an-orchestrate-agent)
+    - [Product Agent](#product-agent)
+  - [Experience Agents in Action](#experience-agents-in-action)
 
 
 ## 🏛 Architecture  
@@ -29,16 +31,16 @@ The sales department of ABC Motor Corp, an automotive large player, when prepari
 **Instructors**: 
 - Check the corresponding [Instructor's guide](https://github.ibm.com/skol/agentic-ai-client-bootcamp-instructors/tree/main/usecase-setup/business-automation) to set up all environments and backend services.
   > NOTE: the `main` branch contains the latest release code. If you want to use a previous release, download the same [release](https://github.ibm.com/skol/agentic-ai-client-bootcamp-instructors/releases) that will be used for participants' lab. 
-- Provide access to the data file located in the instructor repo at `usecase-setup/business-automation/assets/ABC_Motor_Product_Catalog.pdf` that will be uploaded as knowledge.
+- Provide access to the data file `ABC_Motor_Product_Catalog.pdf` that will be uploaded as knowledge.
 
 **Participants**:
 - Validate that you have access to the right TechZone environment for this lab.
-- Complete the [environment-setup](../../environment-setup) guide for steps on API key creation and project setup.
-- Make sure you have created a [**watsonx** project](../../environment-setup/create-project.md) and a [Deployment Space](https://www.ibm.com/docs/en/watsonx/saas?topic=spaces-creating-deployment) in your **watsonx** project. 
+- Complete the [environment-setup](../environment-setup/README.md) guide for steps on API key creation and project setup.
+- Make sure you have created a [**watsonx** project](../environment-setup/create-project.md) and a [Deployment Space](https://www.ibm.com/docs/en/watsonx/saas?topic=spaces-creating-deployment) in your **watsonx** project. 
 - Validate that you have access to a credentials file that your instructor will share with you before starting the labs.
 - Familiarity with AI agent concepts (e.g., instructions, tools, collaborators...)
 - Make sure that your instructor has provided the following:
-  - data file to be uploaded as knowledge
+  - data file `ABC_Motor_Product_Catalog.pdf` to be uploaded as knowledge
 
 ## Create a watsonx.ai Agent
 
@@ -119,16 +121,16 @@ To deploy your agent on Orchestrate, follow the steps below:
 2. Click on the hamburger menu and select **Deployments**.  
 ![Deployments](assets/hamberger_agent_lab.png)
 
-3. Click on the **Spaces** tab and select the space where you deployed the agent.  
-![Spaces](assets/ca_dep.png)
+3. Click on the **View all deployment spaces** tab and select the space where you deployed the agent.  
+![Spaces](assets/hamburger_deployment_spaces.png)
 
-4. Click on the **Assets** tab and select the agent.  
+1. Click on the **Assets** tab and select the agent.  
 ![Asset tab](assets/ca_dep2.png)
 
-5. Then you will go the the main deployment page select your agent from the list.
+1. Then you will go the the main deployment page select your agent from the list.
 ![Deployment agent](assets/ca_dep3.png)
 
-6. Then copy the streaming **Public endpoint**.
+1. Then copy the streaming **Public endpoint** and save it somewhere, for example in a text file.
 ![Deployment agent](assets/ca_url.png)
 
 Now let's go to Orchestrate, create other agent and import this agent in that one.
@@ -172,26 +174,26 @@ In Orchestrate, we will create our main agent, as outlined below:
 6. After clicking the **Choose knowledge** button, a pop-up window will appear. Select **Upload Files**, then click **Next**.
    ![Knowledge](assets/BAP_5_K_2.png)
 
-7. Next, choose the knowledge source. In our case, it's the [Product Catalog](./assets/ABC_Motor_Product_Catalog.pdf). Drag and drop the file into the designated area.
+7. Next, choose the knowledge source. In our case, it's the [Product Catalog](./ABC_Motor_Product_Catalog.pdf). Drag and drop the file into the designated area.
    ![Knowledge](assets/BAP_6_K.png)
 
 8. Once the file is uploaded, the screen will look like the one below. Click **Next** to proceed.
   ![Knowledge](assets/BAP_7_K.png)
 
-9. Add the description below in the **Description** field, and then click **Save**.
+1. Add the description below in the **Description** field, and then click **Save**.
    **Description:**
    ```
    Your knowledge base is the document that contains all the product-related information. All queries related to the product will be addressed using this document as the primary source.
    ```
    ![Knowledge](assets/BAP_8_K.png)
 
-10. After completing all the above steps, your knowledge source will be added and will appear as shown in the image below.
+2.  After completing all the above steps, your knowledge source will be added and will appear as shown in the image below.
    ![Upload file](assets/BAP_9.png)
 
-11. Scroll down to the **Toolset** section, then in the **Agents** section click on the **Add Agent** button.
+3.  Scroll down to the **Toolset** section, then in the **Agents** section click on the **Add Agent** button.
    ![Add Agent](assets/BAP_10.png)
 
-12. From the pop-up menu, select the **Import**.
+4.  From the pop-up menu, select the **Import**.
    ![Add from local instance](assets/BAP_11.png)
 
 > **Note:** : We are now adding the Comparison Agent (an external agent) to the Product Agent, enabling it to delegate tasks to them.
@@ -235,27 +237,26 @@ Follow the steps above, then try interacting with the use case using these sampl
 1. Go to the hamburger menu and select **Chat**
    ![chat](assets/chat.png)
   
-
 1. Select the **Product Agent** from the dropdown menu, and you should be good to go.
    ![Product Agent](assets/BAP_14.png)
 
 1. Product Agent
 
    Ask the following queries which should be routed to the Product Agent:
-   ```
-   What are the products of ABC Motors.
-   ```
-   ```
-   Give me the info of Zenith X3.
-   ```
+
+   ```What are the products of ABC Motors.```
+
+   ```Give me the info of Volkswagen ID.4.```
+
    ![Product Agent Response](assets/chat_1.png)  
 
 3. Comparison Agent
 
    To compare the retrieved data, ask:
    ```
-   Give me URLs of the competitors of the above product and show me the comparison as well.
+   Give me the top 3 competitors of the above product and show me the comparison as well.
    ```
+   
    ![Comparison Agent Response](assets/chat_2.png)  
    ![Comparison Agent Response 2](assets/chat_3.png)
 
