@@ -20,3 +20,13 @@ We have the following prerequisites to complete the bootcamp:
   - creating a Project in Watsonx
   - creating a Deployment Space in watsonx runtime.
 
+### More Hands-on on Agentic AI with Langflow
+
+If you are interested in another use case and product of IBM, then this might also be interesting for you.
+
+IBM recently acquired DataStax and with it, the [Langflow](https://www.langflow.org/) tool - also a low/no-code tool to develop agentic AI systems.
+In this GitHub repository by our colleague you can find an example how to build an agent in Langflow: https://github.com/difli/watsonx-langflow-agent?tab=readme-ov-file.
+
+The best thing is you can even try out this use case after the bootcamp for free. 
+If you want to deploy your created agent afterwards in orchestrate, you can signup for a 30 days trial and add it via MCP Server. 
+Of course, you then also have more time to play around with watsonx and orchestrate as well :) 
