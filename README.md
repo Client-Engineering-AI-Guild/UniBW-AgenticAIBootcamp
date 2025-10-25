@@ -8,7 +8,7 @@ The goal is that you gain hands-on experience with our agentic AI platform watso
 ## Use Cases 
 We will cover at least one use case and depending on the time and your pace, you might even work on two use cases:
 1. `business automation`: This is the easier use case to start with so that you get familiar how to build an agent. You find the information for this use case in the [business-automation](business-automation/hands-on-lab-business-automation.md)
-2. `intelligent assistant`: In this more advanced use case you will build an intelligent assistant that is based on a multi-agent systemt. That means you will use multiple agents to solve specific tasks. You find the information for this use case in the [intelligent assistant folder](![alt text](intelligent%20assistant/Intelligent%20AI%20Assistant.md)).
+2. `intelligent assistant`: In this more advanced use case you will build an intelligent assistant that is based on a multi-agent systemt. That means you will use multiple agents to solve specific tasks. You find the information for this use case in the [intelligent assistant folder](intelligent%20assistant/Intelligent%20AI%20Assistant.md).
 
 ## Prerequisites
 
