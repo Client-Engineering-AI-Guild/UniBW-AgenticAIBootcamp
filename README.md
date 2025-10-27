@@ -10,7 +10,7 @@ The goal is that you gain hands-on experience with our agentic AI platform watso
 We have the following prerequisites to participate in the bootcamp:
 - A GitHub account to access this repository
 - An IBM ID so that we can give you access to an IBM cloud environment so that you can work with our platform on the use cases. You can create one at https://cloud.ibm.com/.
-- Refer to the [Setup](environment-setup/readme.md) to be sure to complete the required setup steps and that you accept the invitation for the cloud account, which include
+- Refer to the [Setup](environment-setup/README.md) to be sure to complete the required setup steps and that you accept the invitation for the cloud account, which include
   - creating an API key
   - creating a Project in Watsonx
   - creating a Deployment Space in watsonx runtime.
